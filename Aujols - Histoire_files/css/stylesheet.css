@@ -1,0 +1,189 @@
+/*police d'écriture*/
+@font-face {
+  font-family: "source_sans_probold";
+  src: url("font/sourcesanspro-bold-webfont.woff2") format("woff2"),
+    url("font/sourcesanspro-bold-webfont.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "source_sans_probold_italic";
+  src: url("font/sourcesanspro-bolditalic-webfont.woff2") format("woff2"),
+    url("font/sourcesanspro-bolditalic-webfont.woff") format("woff");
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "source_sans_proitalic";
+  src: url("font/sourcesanspro-italic-webfont.woff2") format("woff2"),
+    url("font/sourcesanspro-italic-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "source_sans_proregular";
+  src: url("font/sourcesanspro-regular-webfont.woff2") format("woff2"),
+    url("font/sourcesanspro-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+body {
+  font-family: "source_sans_proregular";
+  font-size: 16px;
+}
+/*mettre le h1 de la page au centre et en plus gros*/
+main > div > h1 {
+  text-align: center;
+  font-size: 3em;
+  text-decoration: underline;
+}
+/*bordure du tableau*/
+td,
+th {
+  border: black 1px solid;
+  padding: 1em;
+}
+.table {
+  margin: 0;
+}
+/*mettre la table et le premier paragraphe de la section en flexbox*/
+.flexbox_section2 {
+  display: flex;
+}
+
+table {
+  border: 2px black solid;
+  border-collapse: collapse;
+  margin-left: 15px;
+}
+/*mettre une marge a tout le corp au dessus de 1000px*/
+.container {
+  max-width: 1000px;
+  margin: auto;
+}
+/*mettre la taille de l'image de nav a 5% pour la largeur*/
+.image_nav {
+  width: 5%;
+  height: auto;
+}
+/*parametrage des onglets de la nav*/
+nav ul li a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: rgb(0, 0, 0);
+  display: block;
+  padding: 1em;
+  transition: color 2s;
+}
+/*enlever les point de la nav faire une flexbox des ul et les aliger au centre de l'axe secondaire*/
+nav ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+/*set la nav en flex pas de retour a la ligne et aliger au centre de l'axe secondaire toute les box de la nav*/
+nav {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+/*set du blanc et  sous lignage au survole*/
+header nav a:hover {
+  color: whitesmoke;
+  text-decoration: underline;
+}
+/*setup du header fixer on le fais aller a 0 top et left pour enlever le blanc*/
+header {
+  background-color: darkgoldenrod;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+/*setup des couleur de la nav et du footer*/
+body footer {
+  background-color: darkgoldenrod;
+  margin-top: 40px;
+  padding: 20px;
+}
+/*setup de la couleur d arrier plan du body un padding pour que la nav ne recouvre pas le debut */
+body {
+  background-color: #9f9390;
+  margin: 0px;
+  padding-top: 120px;
+}
+.flexbox_section {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  align-items: center;
+}
+.flexbox_p {
+  display: flex;
+  flex-direction: column;
+}
+.flexbox_section figure img {
+  height: 245px;
+  width: 334px;
+  margin-bottom: 15px;
+}
+.flexbox_section figure {
+  padding-right: 30px;
+  padding-left: 0;
+  margin-right: 0;
+  margin-left: 0;
+}
+.flexbox_section figure figcaption {
+  text-align: center;
+}
+/*regle mobile*/
+@media all and (max-width: 480px) {
+  html {
+    font-size: 16px;
+  }
+  /*repasser les flex box en inline*/
+  .flexbox_section {
+    display: inline;
+  }
+  .flexbox_section2 {
+    display: inline;
+  }
+  .flexbox_p {
+    display: inline;
+  }
+
+  /*mettre une marge a tout le corp au dessus de 460px*/
+  .container {
+    max-width: 390px;
+    margin: auto;
+  }
+  /*ne pas afficher la nav*/
+  nav {
+    display: none;
+  }
+  /*afficher la scroll bar si necessaire*/
+  .table {
+    overflow: auto;
+  }
+  table {
+    margin-left: 0;
+  }
+  /*centrer les titres*/
+  h1 {
+    text-align: center;
+  }
+  /*enlever le padding ajouter pour pas etre recouvert par la nav*/
+  body {
+    padding-top: 5px;
+  }
+  /*essayer de mettre l'image au centre c est le mieu que j ai pu faire*/
+  figure > div {
+    text-align: center;
+  }
+}
